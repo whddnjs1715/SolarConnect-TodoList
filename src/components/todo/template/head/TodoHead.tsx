@@ -23,13 +23,53 @@ const DayText = styled.div`
 
 const TodoHead = () => {
   //@TODO 현재 시간을 표시해야합니다.
+
+  const weekEng = new Array(
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  );
+  const monthEng = new Array(
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  );
+
+  const currTime = new Date();
+
+  const korCurrTime = new Date(currTime.getTime());
+
+  const FormatDate = (date:any) => {
+    return (
+      weekEng[date.getDay()] +
+      " " +
+      monthEng[date.getMonth()] +
+      " " +
+      date.getDate() +
+      ", " +
+      date.getFullYear()
+    );
+  };
+
   const dayString = "Tuesday";
   const dateString = "July 20, 2021";
 
   return (
     <TodoHeadBlock>
-      <DayText>{dayString}</DayText>
-      <DateText>{dateString}</DateText>
+      <DayText>{FormatDate(korCurrTime)}</DayText>
     </TodoHeadBlock>
   );
 };
