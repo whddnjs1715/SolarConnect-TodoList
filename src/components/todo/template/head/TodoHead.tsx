@@ -9,12 +9,6 @@ const TodoHeadBlock = styled.div`
   border-bottom: 3px solid #33bb77;
 `;
 
-const DateText = styled.div`
-  font-size: 26px;
-  color: #119955;
-  padding-left: 10px;
-`;
-
 const DayText = styled.div`
   font-size: 22px;
   color: #119955;
@@ -23,8 +17,7 @@ const DayText = styled.div`
 
 const TodoHead = () => {
   //@TODO 현재 시간을 표시해야합니다.
-
-  const weekEng = new Array(
+  const weekEng = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -32,8 +25,8 @@ const TodoHead = () => {
     "Thursday",
     "Friday",
     "Saturday"
-  );
-  const monthEng = new Array(
+  ];
+  const monthEng = [
     "January",
     "February",
     "March",
@@ -46,7 +39,7 @@ const TodoHead = () => {
     "October",
     "November",
     "December"
-  );
+  ];
 
   const currTime = new Date();
 
@@ -63,9 +56,6 @@ const TodoHead = () => {
       date.getFullYear()
     );
   };
-
-  const dayString = "Tuesday";
-  const dateString = "July 20, 2021";
 
   return (
     <TodoHeadBlock>
