@@ -38,6 +38,8 @@ npm start
 ### 🗂 폴더 구조
 
 ![image](<img width="244" alt="스크린샷 2021-08-21 오후 8 18 11" src="https://user-images.githubusercontent.com/73818206/130320111-a15793a8-7daf-4fce-8ae0-7c9dae0584c3.png">
+<img width="244" alt="스크린샷 2021-08-21 오후 8 18 11" src="https://user-images.githubusercontent.com/73818206/130320123-1cbcd63d-8ab1-42f7-aaf9-d407974e2508.png">
+
 )
 
 - `public`: endpoint 역할을 수행하는 index.html 파일이 저장됩니다.<br>
