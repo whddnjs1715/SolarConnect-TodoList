@@ -37,7 +37,8 @@ npm start
 
 ### 🗂 폴더 구조
 
-![image](https://user-images.githubusercontent.com/65105537/129830505-eab9ee1a-8fbd-4fa3-8a3f-b1bf94f0f970.png)
+![image](<img width="244" alt="스크린샷 2021-08-21 오후 8 18 11" src="https://user-images.githubusercontent.com/73818206/130320111-a15793a8-7daf-4fce-8ae0-7c9dae0584c3.png">
+)
 
 - `public`: endpoint 역할을 수행하는 index.html 파일이 저장됩니다.<br>
 - `src`: 애플리케이션 실행에 필요한 모든 소스코드가 저장됩니다.<br>
