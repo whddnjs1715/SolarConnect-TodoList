@@ -4,6 +4,7 @@ import TodoHead from "./template/head/TodoHead";
 import TodoList from "./template/list/TodoList";
 import TodoCreate from "./template/create/TodoCreate";
 import TodoFooter from "./template/footer/TodoFooter";
+import { Fragment } from "react";
 
 const TodoContainer = () => {
   const {
@@ -16,7 +17,7 @@ const TodoContainer = () => {
   } = useTodo();
   
   return (
-    <>
+    <Fragment>
       <TodoTemplate>
         <TodoHead />
         <TodoCreate
@@ -31,7 +32,7 @@ const TodoContainer = () => {
         />
         <TodoFooter todos={todoState} />
       </TodoTemplate>
-    </>
+    </Fragment>
   );
 };
 

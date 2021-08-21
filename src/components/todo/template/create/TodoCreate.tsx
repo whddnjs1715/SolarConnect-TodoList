@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { Itodo } from "components/todo/TodoService";
+import { todoValidation } from "utils/Validation";
+import { DatePicker } from 'antd';
 
 const CircleButton = styled.button<{ open: boolean }>`
   background: #33bb77;
@@ -38,7 +40,7 @@ const InsertForm = styled.form`
 const Input = styled.input`
   padding: 12px;
   border: 1px solid #dddddd;
-  width: 100%;
+  width: 70%;
   outline: none;
   font-size: 21px;
   box-sizing: border-box;
@@ -47,6 +49,15 @@ const Input = styled.input`
     color: #dddddd;
     font-size: 16px;
   }
+`;
+
+const ErrorMessage = styled.div`
+  width: 100%;
+  font-size: 13px;
+  text-align: left;
+  color: red;
+  padding-left: 40px;
+  background: rgb(255, 255, 255);
 `;
 
 interface TodoCreateProps {
@@ -64,22 +75,36 @@ const TodoCreate = ({
   const [value, setValue] = useState("");
 
   const handleToggle = () => setOpen(!open);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
-
+  };
+    
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // 새로고침 방지
 
     createTodo({
       id: nextId,
       text: value,
-      done: false
+      done: false,
+      date: Date(),
     });
     incrementNextId(); // nextId 하나 증가
-
     setValue(""); // input 초기화
     setOpen(false); // open 닫기
   };
+
+  const initialError = {
+    errorMsg: "",
+  };
+
+  const [errors, setErrors] = useState(initialError);
+
+  const checkValidation = (e: React.FocusEvent<HTMLInputElement>) => {
+    setErrors({
+      ...errors,
+      errorMsg: todoValidation(value).message,
+    });
+  }
 
   return (
     <>
@@ -90,12 +115,20 @@ const TodoCreate = ({
             placeholder="What's need to be done?"
             onChange={handleChange}
             value={value}
+            onBlur={checkValidation}
+          />
+          <DatePicker 
           />
 
-          <CircleButton onClick={handleToggle} open={open}>
+          <CircleButton 
+            onClick={handleToggle} 
+            open={open}
+          >
             <PlusCircleOutlined />
           </CircleButton>
         </InsertForm>
+        {errors.errorMsg && <ErrorMessage>{errors.errorMsg}</ErrorMessage>}
+
       </InsertFormPositioner>
     </>
   );
