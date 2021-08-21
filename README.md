@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# 솔라커넥트 FE Assignment - Todo-List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### 🏕 배포 주소
 
-In the project directory, you can run:
+- 아래 URL을 클릭하면 배포된 페이지로 이동합니다. <br>
+  https://
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 💡 설치 및 시작
+- clone 후 직접 실행을 원하시는 경우 아래 명령어로 실행하시기 바랍니다.
+```js
+//1. 설치
+npm
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+//2. 시작
+npm start
+```
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🧑‍💻 참여 멤버
 
-### `npm run build`
+|  이름  |                  역할                   |
+| :----: | :-------------------------------------: |
+| 김종원 |  Todo-List 수정  |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📋 컴포넌트 설계도
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a href="https://codesandbox.io/s/long-haze-9v8jt?file=/src/components/todo/template/create/TodoCreate.tsx:0-2267" target="_blank">CLICK</a>으로 보러가기
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 🗂 폴더 구조
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://user-images.githubusercontent.com/65105537/129830505-eab9ee1a-8fbd-4fa3-8a3f-b1bf94f0f970.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `public`: endpoint 역할을 수행하는 index.html 파일이 저장됩니다.<br>
+- `src`: 애플리케이션 실행에 필요한 모든 소스코드가 저장됩니다.<br>
+- `components`: 애플리케이션에 사용된 모든 컴포넌트들이 하위에 저장됩니다.<br>
+    - &nbsp;&nbsp;&nbsp;`header`: 페이지 헤더의 구성요소에 해당하는 컴포넌트가 저장됩니다.<br>
+    - &nbsp;&nbsp;&nbsp;`body`: 페이지 바디의 구성요소에 해당하는 컴포넌트들이 저장됩니다.<br>
+    - &nbsp;&nbsp;&nbsp;`common`: 재사용이 되거나 공통적으로 쓰이는 컴포넌트가 저장됩니다.<br>
+    - &nbsp;&nbsp;&nbsp;`pages`: 하나의 페이지가 되는 컴포넌트가 저장됩니다. <br>
+- `icons`: 사용되는 모든 아이콘(확장자: svg)파일이 저장됩니다.<br>
+- `style`: 전역 스타일 적용으로 위한 reset.js 파일이 저장됩니다.<br>
+- `util`: 재사용되는 함수들이 파일 단위로 저장됩니다.<br>
+    - &nbsp;&nbsp;&nbsp;`context`: 전역상태 관리를 위해 요구되는 context.js 와 sortReducer.js 파일이 저장됩니다.<br>
+    - &nbsp;&nbsp;&nbsp;`hooks`: 커스텀 훅을 구현한 파일이 저장됩니다.<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+### 📝 구현목록
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 타이머
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [x] 1, 6의 타이머 컴포넌트 재사용
+- [x] [1. 타이머]는 “ko-KR” 지역시간 표기법으로 나타내기
+- [x] [6. 타이머]는 “en-US” 지역시간 표기법으로 나타내기
+- [x] 한국 표준시를 기준으로 나타내기
 
-### Code Splitting
+#### 입력
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [x] 사용자의 입력 데이터 받기
+- [x] 잘못된 형식의 입력 데이터 예외처리하기
 
-### Analyzing the Bundle Size
+#### 시작
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [x] 사용자가 버튼을 누르는 순간 소팅이 시작되게 하기
+- [x] [4. 결과 필드]에 바로 노출 되고 3초 후에 [5. 결과 필드]에 결과가 노출 되게 하기
 
-### Making a Progressive Web App
+#### 결과
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [x] 결과 데이터의 형식은 “숫자, 숫자, 숫자…” 로 만들기
+- [x] [4. 결과 필드]에서는 오름차순 결과를 나타내기
+- [x] [5. 결과 필드]에서는 내림차순 결과를 나타내기
+- [x] 알고리즘은 소팅알고리즘을 사용하지 않고, 정렬 방법으로 직접 구현하기
 
-### Advanced Configuration
+#### 기타
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [x] React.JS로 구현하기
+- [x] 기획서 참고하여 레이아웃 짜고 UI 구현하기
+- [x] Context API 및 Reducer함수 이용해 전역상태 관리하기
 
-### Deployment
+#### 참고한 레퍼런스
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 리액트를 다루는 기술 (저자 : 김민준)
